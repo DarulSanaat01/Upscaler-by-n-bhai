@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI Photo Upscaler PWA</title>
+<link rel="manifest" href="manifest.json"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<h1>Photo Upscaler PWA</h1>
+<input type="file" id="upload" accept="image/*"/>
+<select id="quality">
+<option value="2">HD (2x)</option>
+<option value="4">4K (4x)</option>
+<option value="8">8K (8x)</option>
+</select>
+<button onclick="upscale()">Upscale</button>
+<canvas id="canvas"></canvas>
+<a id="download" download="upscaled.png">Download</a>
+<script src="app.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+ navigator.serviceWorker.register('sw.js');
+}
+</script>
+</body>
+</html>
